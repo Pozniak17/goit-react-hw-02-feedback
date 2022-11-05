@@ -17,9 +17,17 @@ export const ButtonList = styled.ul`
 
 export const Button = styled.button`
   background-color: #fff;
-  padding: 6px;
+  font-size: 22px;
+  font-weight: 700;
+  padding: 8px;
   border-radius: 12px;
   border: 1px solid #d8d8d8;
+
+  cursor: pointer;
+  :hover {
+    color: #fff;
+    background-color: darkblue;
+  }
 `;
 
 export const TextList = styled.ul`

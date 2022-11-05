@@ -15,33 +15,49 @@ export class Feedback extends Component {
     bad: 0,
   };
 
+  goodHandleIncrement = () => {
+    this.setState(prevState => ({ good: prevState.good + 1 }));
+  };
+
+  neutralHandleIncrement = () => {
+    this.setState(prevState => ({ neutral: prevState.neutral + 1 }));
+  };
+
+  badHandleIncrement = () => {
+    this.setState(prevState => ({ bad: prevState.bad + 1 }));
+  };
+
   render() {
+    const { good } = this.state;
+    const { neutral } = this.state;
+    const { bad } = this.state;
+
     return (
       <Wrapper>
         <Title>Please leave feedback</Title>
 
         <ButtonList>
           <li>
-            <Button>Good</Button>
+            <Button onClick={this.goodHandleIncrement}>Good</Button>
           </li>
           <li>
-            <Button>Neutral</Button>
+            <Button onClick={this.neutralHandleIncrement}>Neutral</Button>
           </li>
           <li>
-            <Button>Bad</Button>
+            <Button onClick={this.badHandleIncrement}>Bad</Button>
           </li>
         </ButtonList>
 
-        <Title>Statistict</Title>
+        <Title>Statisticts</Title>
         <TextList>
           <li>
-            <Text>Good: {this.state.good}</Text>
+            <Text>Good: {good}</Text>
           </li>
           <li>
-            <Text>Neutral: {this.state.neutral}</Text>
+            <Text>Neutral: {neutral}</Text>
           </li>
           <li>
-            <Text>Bad: {this.state.bad}</Text>
+            <Text>Bad: {bad}</Text>
           </li>
         </TextList>
       </Wrapper>

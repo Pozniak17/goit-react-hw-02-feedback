@@ -1,20 +1,7 @@
 import { Component } from 'react';
-import {
-  Title,
-  ButtonList,
-  TextList,
-  Button,
-  Wrapper,
-  Text,
-} from './Feedback.styled';
+import { Title, ButtonList, Button, Wrapper } from './Feedback.styled';
 
-export class Feedback extends Component {
-  state = {
-    good: 0,
-    neutral: 0,
-    bad: 0,
-  };
-
+export class FeedbackOption extends Component {
   goodHandleIncrement = () => {
     this.setState(prevState => ({ good: prevState.good + 1 }));
   };
@@ -36,10 +23,6 @@ export class Feedback extends Component {
   };
 
   render() {
-    const { good } = this.state;
-    const { neutral } = this.state;
-    const { bad } = this.state;
-
     return (
       <Wrapper>
         <Title>Please leave feedback</Title>
@@ -55,31 +38,6 @@ export class Feedback extends Component {
             <Button onClick={this.badHandleIncrement}>Bad</Button>
           </li>
         </ButtonList>
-
-        <Title>Statisticts</Title>
-        <TextList>
-          <li>
-            <Text>Good: {good}</Text>
-          </li>
-          <li>
-            <Text>Neutral: {neutral}</Text>
-          </li>
-          <li>
-            <Text>Bad: {bad}</Text>
-          </li>
-          <li>
-            <Text>Total: {this.countTotalFeedback()}</Text>
-          </li>
-          <li>
-            <Text>
-              Positive feedback:{' '}
-              {this.countPositiveFeedbackPercentage()
-                ? this.countPositiveFeedbackPercentage()
-                : 0}
-              %
-            </Text>
-          </li>
-        </TextList>
       </Wrapper>
     );
   }

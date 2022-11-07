@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { FeedbackOption } from './Feedback/FeedbackOptions';
+import { FeedbackOptions } from './Feedback/FeedbackOptions';
 import { Statistics } from './Statistics/Statistics';
 
 export class App extends Component {
@@ -17,12 +17,24 @@ export class App extends Component {
     return Math.round((this.state.good / this.countTotalFeedback()) * 100);
   };
 
+  //Функція зміни рейтингу, яка приймає ім'я і підставляє, в FeedbackOptions в map() замість name кожен раз ім'я(в нас їх 3)
+  changeRatings = name => {
+    this.setState(prevState => ({ [name]: prevState[name] + 1 }));
+  };
+
   render() {
+    // деструктуризація значень із об'єкту стану
     const { good, neutral, bad } = this.state;
+    // витягуємо значення об'єктів зі стану [good. neutral, bad], які передамо в рендер кнопок як пропсом через map()
+    const buttonNames = Object.keys(this.state);
 
     return (
       <>
-        <FeedbackOption />
+        <FeedbackOptions
+          options={buttonNames}
+          onLeaveFeedback={this.changeRatings}
+        />
+
         <Statistics
           good={good}
           neutral={neutral}

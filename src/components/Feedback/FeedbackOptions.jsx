@@ -14,11 +14,6 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => (
   </Wrapper>
 );
 
-// <Wrapper>
-//
-
-// </Wrapper>
-
 //  <li>
 //         <Button onClick={this.goodHandleIncrement}>Good</Button>
 //       </li>

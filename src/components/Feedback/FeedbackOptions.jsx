@@ -1,12 +1,13 @@
-import { Title, ButtonList, Button, Wrapper } from './Feedback.styled';
+import { ButtonList, Button, Wrapper } from './Feedback.styled';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => (
   <Wrapper>
-    <Title>Please leave feedback</Title>
     <ButtonList>
       {options.map(option => (
         <li key={option}>
-          <Button onClick={() => onLeaveFeedback(option)}>{option}</Button>
+          <Button onClick={() => onLeaveFeedback(option)}>
+            {option.slice(0, 1).toUpperCase() + option.slice(1)}
+          </Button>
         </li>
       ))}
     </ButtonList>

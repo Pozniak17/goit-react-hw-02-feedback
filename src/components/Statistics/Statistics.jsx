@@ -1,4 +1,4 @@
-import { Title, TextList, Text, Wrapper } from './Statistics.styled';
+import { TextList, Text, Wrapper } from './Statistics.styled';
 
 export const Statistics = ({
   good,
@@ -8,7 +8,6 @@ export const Statistics = ({
   positivePercentage,
 }) => (
   <Wrapper>
-    <Title>Statisticts</Title>
     <TextList>
       <li>
         <Text>Good: {good}</Text>

@@ -5,10 +5,6 @@ export const Wrapper = styled.div`
   place-content: center;
 `;
 
-export const Title = styled.h2`
-  font-size: 37px;
-`;
-
 export const ButtonList = styled.ul`
   gap: 10px;
   display: flex;

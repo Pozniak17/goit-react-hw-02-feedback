@@ -1,4 +1,4 @@
-import { TextList, Text, Wrapper } from './Statistics.styled';
+import { TextList, Text, Wrapper, Item } from './Statistics.styled';
 
 export const Statistics = ({
   good,
@@ -9,23 +9,23 @@ export const Statistics = ({
 }) => (
   <Wrapper>
     <TextList>
-      <li>
+      <Item>
         <Text>Good: {good}</Text>
-      </li>
-      <li>
+      </Item>
+      <Item>
         <Text>Neutral: {neutral}</Text>
-      </li>
-      <li>
+      </Item>
+      <Item>
         <Text>Bad: {bad}</Text>
-      </li>
-      <li>
+      </Item>
+      <Item>
         <Text>Total: {total}</Text>
-      </li>
-      <li>
+      </Item>
+      <Item>
         <Text>
           Positive feedback: {positivePercentage ? positivePercentage : 0}%
         </Text>
-      </li>
+      </Item>
     </TextList>
   </Wrapper>
 );

@@ -12,17 +12,17 @@ export const ButtonList = styled.ul`
 `;
 
 export const Button = styled.button`
-  background-color: #fff;
+  background-color: ${props => props.theme.colors.white};
   font-size: 22px;
-  font-weight: 700;
-  padding: 8px;
+  font-weight: ${props => props.theme.fontWeights.bold};
+  padding: ${props => props.theme.space[3]}px;
   border-radius: 12px;
-  border: 1px solid #d8d8d8;
+  border: ${props => props.theme.borders.normal} #d8d8d8;
 
   cursor: pointer;
   :hover {
-    color: #fff;
-    background-color: darkblue;
+    color: ${props => props.theme.colors.white};
+    background-color: ${props => props.theme.colors.darkblue};
   }
 `;
 
@@ -32,5 +32,7 @@ export const TextList = styled.ul`
 
 export const Text = styled.p`
   font-size: 20px;
-  font-weight: 600;
+  font-weight: ${props => props.theme.fontWeights.semiBold};
 `;
+
+export const Item = styled.li``;

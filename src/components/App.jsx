@@ -6,7 +6,9 @@ import { Section } from './Section/Section';
 import { Notification } from './Notification/Notification.jsx';
 
 export class App extends Component {
-  static propTypes = {};
+  static propTypes = {
+    onLeaveFeedback: PropTypes.func,
+  };
 
   state = {
     good: 0,

@@ -2,14 +2,17 @@ import { styled } from 'styled-components';
 
 export const List = styled.ul`
   text-align: start;
-  margin-left: 120px;
+  margin-left: ${props => props.theme.spacing(24)}; //120px
 `;
 
 export const Item = styled.li`
-  margin-bottom: 10px;
+  margin-bottom: ${props => props.theme.spacing(2)}; //10px
+  &:last-child {
+    margin-bottom: 0;
+  }
 `;
 
 export const Text = styled.p`
-  font-size: 20px;
-  font-weight: 500;
+  font-size: ${props => props.theme.spacing(4)}; //20px
+  font-weight: ${props => props.theme.fontWeights.medium}; //500
 `;

@@ -1,9 +1,8 @@
 import { styled } from 'styled-components';
 
 export const Layout = styled.div`
-  margin: 120px auto;
-  width: 400px;
+  margin: ${props => props.theme.spacing(24)} auto;
+  width: ${props => props.theme.sizes[2]}px; //400
   padding: 0 15px;
   text-align: center;
-  /* text-align: center; */
 `;

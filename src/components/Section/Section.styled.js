@@ -1,8 +1,8 @@
 import { styled } from 'styled-components';
 
 export const Title = styled.h2`
-  font-size: 32px;
+  font-size: ${props => props.theme.fontSizes.l}; //32px
 
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: ${props => props.theme.spacing(8)}; //40px
+  margin-bottom: ${props => props.theme.spacing(8)}; //40px
 `;
